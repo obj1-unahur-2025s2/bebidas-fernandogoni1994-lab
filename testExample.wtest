@@ -1,9 +1,35 @@
-import example.pepita
+import bebidas.*
+import Tito.*
 
-describe "group of tests for pepita" {
+describe "Pruebas de bebidas" {
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+  test "Whisky" {   
+    assert.equals(0.9, whisky.rendimiento(1)) //El primer parametro espera el resultado que debería dar, y el segundo parametro es el llamado al metodo.
   }
+
+  test "Terere" {   
+    assert.equals(1, tereré.rendimiento(2)) //El primer parametro espera el resultado que debería dar, y el segundo parametro es el llamado al metodo.
+  }
+
+  test "Cianuro" {   
+    assert.equals(0, cianuro.rendimiento(50)) //El primer parametro espera el resultado que debería dar, y el segundo parametro es el llamado al metodo.
+  }
+
+}
+
+describe "Pruebas Tito" {
+
+  test "Velocidad de Tito después de consumir cm3 de whisky" {
+    tito.consumir(3, whisky)  //El resultado será utilizado para el testeo, es necesario colocar primero esta funcion para poder tener el resultado que va en el testeo 
+    assert.equals(5.103, tito.velocidad()) //El primer parametro espera el resultado que debería dar, y el segundo parametro es el llamado al metodo.
+  }
+
+  test "Velocidad de Tito después de consumir cm3 de tereré" {
+    tito.consumir(1, tereré)  //El resultado será utilizado para el testeo, es necesario colocar primero esta funcion para poder tener el resultado que va en el testeo
+    assert.equals(7, tito.velocidad()) //El primer parametro espera el resultado que debería dar, y el segundo parametro es el llamado al metodo.
+  }
+
+
+ 
 
 }
